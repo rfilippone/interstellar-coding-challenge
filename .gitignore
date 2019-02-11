@@ -27,6 +27,7 @@ hs_err_pid*
 !gradle/wrapper/gradle-wrapper.jar
 
 ### STS ###
+bin/
 .apt_generated
 .classpath
 .factorypath
