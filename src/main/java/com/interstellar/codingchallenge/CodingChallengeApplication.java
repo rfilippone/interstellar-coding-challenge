@@ -1,4 +1,4 @@
-package com.interstallar.codingchallenge;
+package com.interstellar.codingchallenge;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

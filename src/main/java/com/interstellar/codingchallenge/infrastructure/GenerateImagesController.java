@@ -1,4 +1,4 @@
-package com.interstallar.codingchallenge.infrastructure;
+package com.interstellar.codingchallenge.infrastructure;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

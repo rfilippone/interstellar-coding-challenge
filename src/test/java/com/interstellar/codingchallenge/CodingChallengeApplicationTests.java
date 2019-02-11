@@ -1,4 +1,4 @@
-package com.interstallar.codingchallenge;
+package com.interstellar.codingchallenge;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
