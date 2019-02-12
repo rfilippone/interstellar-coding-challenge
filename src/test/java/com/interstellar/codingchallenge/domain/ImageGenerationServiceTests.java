@@ -7,10 +7,13 @@ import java.text.SimpleDateFormat;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import com.interstellar.codingchallenge.domain.exception.NotEnoughImages;
 
+@RunWith(MockitoJUnitRunner.class)
 public class ImageGenerationServiceTests {
   private ImageGenerationService service;
 

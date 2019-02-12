@@ -16,7 +16,9 @@ public class ImageGenerationService {
   }
 
   public byte[] generateImage(ImageGenerationRequest request) throws NotEnoughImages {
-    throw new NotEnoughImages();
+    Granule granule = finder.findGranule(request);
+
+    return null;
   }
 
 }
