@@ -1,5 +1,6 @@
 package com.interstellar.codingchallenge.domain;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,16 +11,16 @@ public class Granule {
     B02, B03, B04, B05, B06, B07, B09
   }
 
-  private Map<Bands, String> map;
+  private Map<Bands, File> map;
 
   private Granule() {
-    map = new HashMap<Granule.Bands, String>();
+    map = new HashMap<Granule.Bands, File>();
   }
 
-  public static Granule fromfiles(List<String> files) {
+  public static Granule fromfiles(List<File> files) {
     Granule granule = new Granule();
-    for (String file : files) {
-      String bandString = file.substring(23, 26);
+    for (File file : files) {
+      String bandString = file.getName().substring(23, 26);
       try {
         granule.map.put(Bands.valueOf(bandString), file);
       } catch (Exception e) {
