@@ -3,7 +3,6 @@ package com.interstellar.codingchallenge.domain;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 public class Granule {
   // Pattern: T33UUP_20180804T100031_B01.tif
@@ -19,7 +18,6 @@ public class Granule {
 
   public static Granule fromfiles(List<String> files) {
     Granule granule = new Granule();
-    Pattern p = Pattern.compile("");
     for (String file : files) {
       String bandString = file.substring(23, 26);
       try {
