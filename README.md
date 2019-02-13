@@ -16,4 +16,4 @@ There are 2 ways:
 
 1. You have GDAL installed. Run `./gradlew bootrun` at the root of the project
 
-2. You don't have GDAL installed but you have Docker installed: Run the provided run script with `./run.sh` at the root of the project. (During the first run this operation will some time to build the Docker image and dowload all the needed dependencies)
+2. You don't have GDAL installed but you have Docker installed: Run the provided run script with `./run.sh` at the root of the project. (During the first run this operation will take some time to build the Docker image and dowload all the needed dependencies)
