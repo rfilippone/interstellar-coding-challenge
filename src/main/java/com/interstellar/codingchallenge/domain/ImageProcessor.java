@@ -1,7 +1,7 @@
 package com.interstellar.codingchallenge.domain;
 
-public interface ImageProcessor {
-  public boolean canProcess(Granule granule);
+import com.interstellar.codingchallenge.domain.exception.NotEnoughImages;
 
-  public byte[] process(Granule granule);
+public interface ImageProcessor {
+  public byte[] process(Granule granule) throws NotEnoughImages;
 }
