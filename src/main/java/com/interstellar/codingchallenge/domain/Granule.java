@@ -33,4 +33,8 @@ public class Granule {
   public boolean has(Bands band) {
     return map.containsKey(band);
   }
+
+  public String get(Bands band) {
+    return map.get(band).getPath();
+  }
 }
