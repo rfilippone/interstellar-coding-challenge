@@ -14,6 +14,9 @@ public class ImageProcessorFactory {
   @Autowired
   VegetationProcessor vegetation;
 
+  @Autowired
+  WaterVaporProcessor waterVapor;
+
   public ImageProcessor forRequest(ImageGenerationRequest request) throws ChannelMapUnsupported {
     switch (request.getChannelMap()) {
     case "visible":
@@ -21,6 +24,9 @@ public class ImageProcessorFactory {
 
     case "vegetation":
       return vegetation;
+
+    case "waterVapor":
+      return waterVapor;
 
     default:
       throw new ChannelMapUnsupported();
