@@ -2,6 +2,7 @@ package com.interstellar.codingchallenge.domain;
 
 import static org.mockito.Mockito.when;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -30,7 +31,8 @@ public class ImageGenerationServiceTests {
   }
 
   @Test(expected = NotEnoughImages.class)
-  public void throwsNotEnoughImagesOnMissingImages() throws ParseException, NotEnoughImages, ChannelMapUnsupported {
+  public void throwsNotEnoughImagesOnMissingImages()
+      throws ParseException, NotEnoughImages, ChannelMapUnsupported, IOException {
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     ImageGenerationRequest request = new ImageGenerationRequest(33, "U", "UP", sdf.parse("1990-01-01"), "visible");
 

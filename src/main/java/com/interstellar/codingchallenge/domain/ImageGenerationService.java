@@ -1,5 +1,7 @@
 package com.interstellar.codingchallenge.domain;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,13 +20,12 @@ public class ImageGenerationService {
     this.factory = factory;
   }
 
-  public byte[] generateImage(ImageGenerationRequest request) throws NotEnoughImages, ChannelMapUnsupported {
+  public byte[] generateImage(ImageGenerationRequest request)
+      throws NotEnoughImages, ChannelMapUnsupported, IOException {
     Granule granule = finder.findGranule(request);
 
     ImageProcessor processor = factory.forRequest(request);
-    processor.process(granule);
-
-    return null;
+    return processor.process(granule);
   }
 
 }
