@@ -11,10 +11,19 @@ public class ImageProcessorFactory {
   @Autowired
   VisibleProcessor visible;
 
+  @Autowired
+  VegetationProcessor vegetation;
+
   public ImageProcessor forRequest(ImageGenerationRequest request) throws ChannelMapUnsupported {
-    if (request.getChannelMap() == "visible") {
+    switch (request.getChannelMap()) {
+    case "visible":
       return visible;
+
+    case "vegetation":
+      return vegetation;
+
+    default:
+      throw new ChannelMapUnsupported();
     }
-    throw new ChannelMapUnsupported();
   }
 }

@@ -33,4 +33,11 @@ public class ImageProcessorFactoryTest {
     ImageGenerationRequest request = new ImageGenerationRequest(33, "U", "UP", sdf.parse("1990-01-01"), "visible");
     assertThat(factory.forRequest(request)).isInstanceOf(VisibleProcessor.class);
   }
+
+  @Test
+  public void createsVegetationProcessor() throws ParseException, ChannelMapUnsupported {
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    ImageGenerationRequest request = new ImageGenerationRequest(33, "U", "UP", sdf.parse("1990-01-01"), "vegetation");
+    assertThat(factory.forRequest(request)).isInstanceOf(VegetationProcessor.class);
+  }
 }
