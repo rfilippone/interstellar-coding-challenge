@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.interstellar.codingchallenge.domain.ImageGenerationRequest;
 import com.interstellar.codingchallenge.domain.ImageGenerationService;
+import com.interstellar.codingchallenge.domain.exception.ChannelMapUnsupported;
 import com.interstellar.codingchallenge.domain.exception.NotEnoughImages;
 
 @RestController
@@ -16,7 +17,8 @@ public class GenerateImagesController {
   private ImageGenerationService service;
 
   @RequestMapping(method = RequestMethod.POST, path = "/generate-images")
-  public void generateImages(@RequestBody ImageGenerationRequest request) throws NotEnoughImages {
+  public void generateImages(@RequestBody ImageGenerationRequest request)
+      throws NotEnoughImages, ChannelMapUnsupported {
     byte[] res = service.generateImage(request);
   }
 }
