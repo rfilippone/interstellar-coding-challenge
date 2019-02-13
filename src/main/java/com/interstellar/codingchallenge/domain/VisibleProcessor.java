@@ -1,8 +1,11 @@
 package com.interstellar.codingchallenge.domain;
 
+import org.springframework.stereotype.Service;
+
 import com.interstellar.codingchallenge.domain.Granule.Bands;
 import com.interstellar.codingchallenge.domain.exception.NotEnoughImages;
 
+@Service
 public class VisibleProcessor implements ImageProcessor {
 
   @Override
@@ -13,5 +16,4 @@ public class VisibleProcessor implements ImageProcessor {
     // TODO Auto-generated method stub
     return null;
   }
-
 }

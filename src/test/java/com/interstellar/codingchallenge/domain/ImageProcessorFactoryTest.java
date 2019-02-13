@@ -1,5 +1,7 @@
 package com.interstellar.codingchallenge.domain;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -25,4 +27,10 @@ public class ImageProcessorFactoryTest {
     factory.forRequest(request);
   }
 
+  @Test
+  public void createsVisibleProcessor() throws ParseException, ChannelMapUnsupported {
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    ImageGenerationRequest request = new ImageGenerationRequest(33, "U", "UP", sdf.parse("1990-01-01"), "visible");
+    assertThat(factory.forRequest(request)).isInstanceOf(VisibleProcessor.class);
+  }
 }
