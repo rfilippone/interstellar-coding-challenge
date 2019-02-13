@@ -9,6 +9,9 @@ public class ImageGenerationRequest {
   private Date date;
   private String channelMap;
 
+  public ImageGenerationRequest() {
+  }
+
   public ImageGenerationRequest(int utmZone, String latitudeBand, String gridSquare, Date date, String channelMap) {
     super();
     this.utmZone = utmZone;
